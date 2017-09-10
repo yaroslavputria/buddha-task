@@ -1,0 +1,9 @@
+<div class="list-container">
+    <h2>All products list:</h2>
+    <div class="wrap-item" *ngFor="let product of products; let index = index; let odd = odd; let even = even"
+            [ngClass]="{ odd: odd, even: even }">
+        <app-product-list-item [product]="product"
+                (deleteProduct)="deleteProductById($event, index)"></app-product-list-item>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="createProduct()">Create New Product</button>

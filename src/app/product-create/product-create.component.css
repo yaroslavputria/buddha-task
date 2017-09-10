@@ -1,0 +1,3 @@
+.ng-invalid.ng-dirty ~ div.invalid-feedback {
+    display: block;
+}

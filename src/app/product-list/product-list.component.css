@@ -1,0 +1,22 @@
+.list-container {
+    margin-bottom: 10px;
+    min-width: 350px;
+}
+
+.wrap-item {
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.wrap-item:hover {
+    background-color: #7aaab3;
+    cursor: default;
+}
+
+.even {
+    background-color: #cce5e0;
+}
+
+.odd {
+    background-color: #e4e8e7;
+}

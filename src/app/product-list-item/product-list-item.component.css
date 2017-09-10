@@ -1,0 +1,19 @@
+.product-list-item {
+    padding: 10px;
+    position: relative;
+}
+
+.product-list-item: hover {
+    color: grey;
+}
+
+.to-details-link {
+    padding-right: 100px;
+    overflow: hidden;
+}
+
+.wrap-btns {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}

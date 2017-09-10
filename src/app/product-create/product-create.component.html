@@ -1,0 +1,45 @@
+<form (ngSubmit)="onSubmit($event)" [formGroup]="productFormGroup">
+    <fieldset class="form-group">
+        <legend>{{legend}}</legend>
+        <div class="row">
+            <div class="col">
+                <label for="title">Title:</label>
+                <input formControlName="title" type="text" class="form-control" id="title" required>
+                <div class="invalid-feedback">
+                    Please provide a valid title.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="description">Description</label>
+                <textarea formControlName="description" class="form-control" id="description" rows="5" required></textarea>
+                <div class="invalid-feedback">
+                    Please provide a valid product description.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="price">Price</label>
+                <input formControlName="price" type="text" class="form-control" id="price" required priceValidate>
+                <div class="invalid-feedback">
+                    Please provide a valid price.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="image">Choose product image</label>
+                <input formControlName="image" type="file" class="form-control-file" id="image">
+                <div class="invalid-feedback">
+                    Please choose a valid image.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

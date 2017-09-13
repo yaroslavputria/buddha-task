@@ -33,9 +33,10 @@ export class ProductListComponent implements OnInit {
         const modalRef = this.modalService.open(ModalConfirmComponent);
         modalRef.componentInstance.title = 'Delete product';
         modalRef.componentInstance.message = `Are You sure You want to delete ${deletingProd.title}?`;
-        modalRef.componentInstance.confirmEE.subscribe(() => {
+        const subscrd = modalRef.componentInstance.confirmEE.subscribe(() => {
             this.productService.deleteProduct(id);
             this.products.splice(index, 1);
+            subscrd.unsubscribe();
         });
     }
 

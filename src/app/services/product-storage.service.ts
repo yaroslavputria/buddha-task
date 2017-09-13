@@ -46,7 +46,7 @@ export class ProductStorageService {
     }
 
     getProducts(): Product[] {
-        return this.productStorage;
+        return [].concat(this.productStorage);
     }
 
     getProduct(id): Product {

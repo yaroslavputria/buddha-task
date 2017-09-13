@@ -5,6 +5,7 @@ import { ProductStorageService } from '../services/product-storage.service';
 
 import { RequiredFileDirective } from '../directives/required-file.directive';
 import { UploadImgOnlyDirective } from '../directives/upload-img-only.directive';
+import 'rxjs/add/operator/first';
 
 
 @Component({
@@ -29,14 +30,14 @@ export class ProductCreateComponent implements OnInit {
             'price': new FormControl(),
             'image': new FormControl('', [RequiredFileDirective.validate, UploadImgOnlyDirective.validate])
         });
-        this.activatedRoute.url.subscribe(url => {
+        this.activatedRoute.url.first().subscribe(url => {
             if (url[0].path === 'product-create') {
                 this.legend = 'Create product';
                 this.cmpType = 'create';
             } else if (url[0].path === 'product-edit') {
                 this.legend = 'Edit product';
                 this.cmpType = 'edit';
-                this.activatedRoute.params.subscribe(params => {
+                this.activatedRoute.params.first().subscribe(params => {
                     this.editedProduct = this.productService.getProduct(+params['id']);
                     this.productFormGroup.setValue({
                         'title': this.editedProduct.title,
